@@ -1,9 +1,5 @@
-# AnimalRefresh Mod for MITE (FML-3.X)
+# Progress Limiter Mod for MITE (FML-3.X)
 
 ## Features
 
-* Add a command to "respawn" animals.
-
-## Usage: 
-* /animalrefresh
-* /ar
+* Limit the development speed of players on the server to prevent involution.
