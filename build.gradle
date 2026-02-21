@@ -7,7 +7,7 @@ version = project.mod_version
 group = project.maven_group
 
 base {
-    archivesName = project.archives_base_name
+    archivesName = "[防内卷]" +  project.archives_base_name
 }
 
 repositories {
@@ -23,7 +23,7 @@ loom {
     mergedMinecraftJar()
     setFML(new File("${lib_dir}/${fml_file_name}${fml_version}.jar"))
     mods {
-        "StartWithTorch" {
+        "ProgressLimiter" {
             sourceSet sourceSets.main
         }
     }
@@ -41,6 +41,11 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     implementation files(loom.getFML().toPath())
+
+    implementation files("${lib_dir}/ManyLib-2.2.2.jar")
+    implementation files("${lib_dir}/ModMenu-10.1.1.jar")
+    //manylib
+    implementation files("${lib_dir}/gson-2.10.1.jar")
 }
 
 processResources {

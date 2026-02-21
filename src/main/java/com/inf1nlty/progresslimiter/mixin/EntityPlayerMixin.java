@@ -1,6 +1,6 @@
 package com.inf1nlty.progresslimiter.mixin;
 
-import com.inf1nlty.progresslimiter.PLConfig;
+import com.inf1nlty.progresslimiter.PLConfigs;
 import net.minecraft.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -14,9 +14,6 @@ public abstract class EntityPlayerMixin {
     @Unique private int progLimiter_timerTicks = 0;
     @Unique private boolean progLimiter_warn50 = false;
     @Unique private boolean progLimiter_warn80 = false;
-
-    // NOTE: THRESHOLD_SECONDS removed; use ProgressLimiterConfig.getThresholdTicks()
-    @Unique private static final int EFFECT_DURATION_FALLBACK = 9999999;
 
     @Inject(method = "onUpdate", at = @At("TAIL"))
     private void pl_onUpdate(CallbackInfo ci) {
@@ -37,10 +34,9 @@ public abstract class EntityPlayerMixin {
         EntityLivingBase selfLiving = (EntityLivingBase) selfEntity;
         boolean hasNV = selfLiving.isPotionActive(Potion.nightVision.id);
 
-        // current runtime-configured thresholds (use getters so methods are used)
-        int thresholdTicks = PLConfig.getThresholdTicks();
-        int effectDuration = PLConfig.getEffectDurationTicks() > 0 ? PLConfig.getEffectDurationTicks() : EFFECT_DURATION_FALLBACK;
-        double yRelease = PLConfig.getYReleaseThreshold();
+        int thresholdTicks = PLConfigs.getThresholdTicks();
+        int effectDuration = PLConfigs.getEffectDurationSeconds();
+        double yRelease = PLConfigs.getYReleaseThreshold();
 
         if (!inUnderworld) {
             if (this.progLimiter_timerTicks > 0) this.progLimiter_timerTicks = Math.max(0, this.progLimiter_timerTicks - 1);
