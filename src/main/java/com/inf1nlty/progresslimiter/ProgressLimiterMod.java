@@ -12,7 +12,7 @@ public class ProgressLimiterMod implements ModInitializer {
 
         ModResourceManager.addResourcePackDomain(NAMESPACE);
 
-        PLConfigs.getInstance().load();
-        ConfigManager.getInstance().registerConfig(PLConfigs.getInstance());
+        PLConfig.getInstance().load();
+        ConfigManager.getInstance().registerConfig(PLConfig.getInstance());
     }
 }
