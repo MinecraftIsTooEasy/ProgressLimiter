@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "progresslimiter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "depends": {
     "fishmodloader": ">=3.0.0"
   },
-  "environment": "*",
+  "environment": "server",
   "name": "Progress Limiter",
   "description": "Limit the development speed of players on the server to prevent involution.",
   "authors": [
