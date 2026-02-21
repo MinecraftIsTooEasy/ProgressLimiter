@@ -80,9 +80,82 @@ public abstract class EntityPlayerUnderWorldMixin {
         {
             this.progLimiter_warn50 = true;
             this.progLimiter_warn80 = true;
-            applyEffectIfNeeded(selfLiving, Potion.digSlowdown.id, effectDuration, 1);
-            applyEffectIfNeeded(selfLiving, Potion.moveSlowdown.id, effectDuration, 1);
-            applyEffectIfNeeded(selfLiving, Potion.weakness.id, effectDuration, 1);
+
+            int ampVal;
+            int amp;
+
+            ampVal = PLConfig.getUnderFull_digSlowdown_amp();
+
+            if (ampVal > 0)
+            {
+                amp = ampVal - 1; applyEffectIfNeeded(selfLiving, Potion.digSlowdown.id, effectDuration, amp);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.digSlowdown.id);
+
+            ampVal = PLConfig.getUnderFull_moveSlowdown_amp();
+
+            if (ampVal > 0)
+            {
+                amp = ampVal - 1; applyEffectIfNeeded(selfLiving, Potion.moveSlowdown.id, effectDuration, amp);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.moveSlowdown.id);
+
+            ampVal = PLConfig.getUnderFull_weakness_amp();
+
+            if (ampVal > 0)
+            {
+                amp = ampVal - 1; applyEffectIfNeeded(selfLiving, Potion.weakness.id, effectDuration, amp);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.weakness.id);
+
+            ampVal = PLConfig.getUnderFull_confusion_amp();
+
+            if (ampVal > 0)
+            {
+                amp = ampVal - 1; applyEffectIfNeeded(selfLiving, Potion.confusion.id, effectDuration, amp);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.confusion.id);
+
+            ampVal = PLConfig.getUnderFull_blindness_amp();
+
+            if (ampVal > 0)
+            {
+                amp = ampVal - 1; applyEffectIfNeeded(selfLiving, Potion.blindness.id, effectDuration, amp);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.blindness.id);
+
+            ampVal = PLConfig.getUnderFull_hunger_amp();
+
+            if (ampVal > 0)
+            {
+                amp = ampVal - 1; applyEffectIfNeeded(selfLiving, Potion.hunger.id, effectDuration, amp);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.hunger.id);
+
+            ampVal = PLConfig.getUnderFull_poison_amp();
+
+            if (ampVal > 0)
+            {
+                amp = ampVal - 1; applyEffectIfNeeded(selfLiving, Potion.poison.id, effectDuration, amp);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.poison.id);
+
+            ampVal = PLConfig.getUnderFull_wither_amp();
+
+            if (ampVal > 0)
+            {
+                amp = ampVal - 1; applyEffectIfNeeded(selfLiving, Potion.wither.id, effectDuration, amp);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.wither.id);
+
             return;
         }
 
@@ -111,9 +184,82 @@ public abstract class EntityPlayerUnderWorldMixin {
                     sendPlayerMessage((EntityPlayer) selfEntity, "由于对黑暗的恐惧，你感觉有一点疲劳");
                 }
             }
-            applyEffectIfNeeded(selfLiving, Potion.digSlowdown.id, effectDuration, 0);
-            removeEffectIfNeeded(selfLiving, Potion.moveSlowdown.id);
-            removeEffectIfNeeded(selfLiving, Potion.weakness.id);
+
+            int ampVal50;
+            int amp50;
+
+            ampVal50 = PLConfig.getUnder50_digSlowdown_amp();
+
+            if (ampVal50 > 0)
+            {
+                amp50 = ampVal50 - 1; applyEffectIfNeeded(selfLiving, Potion.digSlowdown.id, effectDuration, amp50);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.digSlowdown.id);
+
+            ampVal50 = PLConfig.getUnder50_moveSlowdown_amp();
+
+            if (ampVal50 > 0)
+            {
+                amp50 = ampVal50 - 1; applyEffectIfNeeded(selfLiving, Potion.moveSlowdown.id, effectDuration, amp50);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.moveSlowdown.id);
+
+            ampVal50 = PLConfig.getUnder50_weakness_amp();
+
+            if (ampVal50 > 0)
+            {
+                amp50 = ampVal50 - 1; applyEffectIfNeeded(selfLiving, Potion.weakness.id, effectDuration, amp50);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.weakness.id);
+
+            ampVal50 = PLConfig.getUnder50_confusion_amp();
+
+            if (ampVal50 > 0)
+            {
+                amp50 = ampVal50 - 1; applyEffectIfNeeded(selfLiving, Potion.confusion.id, effectDuration, amp50);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.confusion.id);
+
+            ampVal50 = PLConfig.getUnder50_blindness_amp();
+
+            if (ampVal50 > 0)
+            {
+                amp50 = ampVal50 - 1; applyEffectIfNeeded(selfLiving, Potion.blindness.id, effectDuration, amp50);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.blindness.id);
+
+            ampVal50 = PLConfig.getUnder50_hunger_amp();
+
+            if (ampVal50 > 0)
+            {
+                amp50 = ampVal50 - 1; applyEffectIfNeeded(selfLiving, Potion.hunger.id, effectDuration, amp50);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.hunger.id);
+
+            ampVal50 = PLConfig.getUnder50_poison_amp();
+
+            if (ampVal50 > 0)
+            {
+                amp50 = ampVal50 - 1; applyEffectIfNeeded(selfLiving, Potion.poison.id, effectDuration, amp50);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.poison.id);
+
+            ampVal50 = PLConfig.getUnder50_wither_amp();
+
+            if (ampVal50 > 0)
+            {
+                amp50 = ampVal50 - 1; applyEffectIfNeeded(selfLiving, Potion.wither.id, effectDuration, amp50);
+            }
+
+            else removeEffectIfNeeded(selfLiving, Potion.wither.id);
+
             return;
         }
 
@@ -160,6 +306,11 @@ public abstract class EntityPlayerUnderWorldMixin {
         removeEffectIfNeeded(entity, Potion.digSlowdown.id);
         removeEffectIfNeeded(entity, Potion.moveSlowdown.id);
         removeEffectIfNeeded(entity, Potion.weakness.id);
+        removeEffectIfNeeded(entity, Potion.confusion.id);
+        removeEffectIfNeeded(entity, Potion.blindness.id);
+        removeEffectIfNeeded(entity, Potion.hunger.id);
+        removeEffectIfNeeded(entity, Potion.poison.id);
+        removeEffectIfNeeded(entity, Potion.wither.id);
     }
 
     @Unique
@@ -200,10 +351,15 @@ public abstract class EntityPlayerUnderWorldMixin {
     private void pl_readNBT(NBTTagCompound nbt, CallbackInfo ci)
     {
         if (nbt.hasKey("ProgressLimiter_TimerTicks")) this.progLimiter_timerTicks = nbt.getInteger("ProgressLimiter_TimerTicks");
+
         else this.progLimiter_timerTicks = 0;
+
         if (nbt.hasKey("ProgressLimiter_Warn50")) this.progLimiter_warn50 = nbt.getBoolean("ProgressLimiter_Warn50");
+
         else this.progLimiter_warn50 = false;
+
         if (nbt.hasKey("ProgressLimiter_Warn80")) this.progLimiter_warn80 = nbt.getBoolean("ProgressLimiter_Warn80");
+
         else this.progLimiter_warn80 = false;
     }
 }
