@@ -60,131 +60,131 @@ public class PLConfig extends SimpleConfigs {
     );
 
     public static final ConfigInteger under50_digSlowdown_amp = new ConfigInteger(
-            "挖掘疲劳",
+            "50%阶段 挖掘疲劳",
             1,
             0,
             4,
-            "挖掘疲劳效果的等级, 设置为 0 可禁用，1 表示挖掘疲劳 I"
+            "达到50%阶段的挖掘疲劳效果的等级, 设置为 0 可禁用，1 表示挖掘疲劳 I"
     );
 
     public static final ConfigInteger under50_moveSlowdown_amp = new ConfigInteger(
-            "缓慢",
+            "50%阶段 缓慢",
             0,
             0,
             4,
-            "缓慢效果的等级, 设置为 0 可禁用，1 表示缓慢 I"
+            "达到50%阶段的缓慢效果的等级, 设置为 0 可禁用，1 表示缓慢 I"
     );
 
     public static final ConfigInteger under50_weakness_amp = new ConfigInteger(
-            "虚弱",
+            "50%阶段 虚弱",
             0,
             0,
             4,
-            "虚弱效果的等级, 设置为 0 可禁用，1 表示虚弱 I"
+            "达到50%阶段的虚弱效果的等级, 设置为 0 可禁用，1 表示虚弱 I"
     );
 
     public static final ConfigInteger under50_confusion_amp = new ConfigInteger(
-            "反胃",
+            "50%阶段 反胃",
             0,
             0,
             4,
-            "反胃效果的等级, 设置为 0 可禁用"
+            "达到50%阶段的反胃效果的等级, 设置为 0 可禁用"
     );
 
     public static final ConfigInteger under50_blindness_amp = new ConfigInteger(
-            "失明",
+            "50%阶段 失明",
             0,
             0,
             4,
-            "失明效果的等级, 设置为 0 可禁用"
+            "达到50%阶段的失明效果的等级, 设置为 0 可禁用"
     );
 
     public static final ConfigInteger under50_hunger_amp = new ConfigInteger(
-            "饥饿",
+            "50%阶段 饥饿",
             0,
             0,
             4,
-            "饥饿效果的等级, 设置为 0 可禁用"
+            "达到50%阶段的饥饿效果的等级, 设置为 0 可禁用"
     );
 
     public static final ConfigInteger under50_poison_amp = new ConfigInteger(
-            "中毒",
+            "50%阶段 中毒",
             0,
             0,
             4,
-            "中毒效果的等级, 设置为 0 可禁用"
+            "达到50%阶段的中毒效果的等级, 设置为 0 可禁用"
     );
 
     public static final ConfigInteger under50_wither_amp = new ConfigInteger(
-            "凋零",
+            "50%阶段 凋零",
             0,
             0,
             4,
-            "凋零效果的等级, 设置为 0 可禁用"
+            "达到50%阶段的凋零效果的等级, 设置为 0 可禁用"
     );
 
     public static final ConfigInteger underFull_digSlowdown_amp = new ConfigInteger(
-            "挖掘疲劳",
+            "100%阶段 挖掘疲劳",
             2,
             0,
             4,
-            "挖掘疲劳效果的等级, 设置为 0 可禁用，1 表示挖掘疲劳 I"
+            "达到100%阶段的挖掘疲劳效果的等级, 设置为 0 可禁用，1 表示挖掘疲劳 I"
     );
 
     public static final ConfigInteger underFull_moveSlowdown_amp = new ConfigInteger(
-            "缓慢",
+            "100%阶段 缓慢",
             2,
             0,
             4,
-            "缓慢效果的等级, 设置为 0 可禁用，1 表示缓慢 I"
+            "达到100%阶段的缓慢效果的等级, 设置为 0 可禁用，1 表示缓慢 I"
     );
 
     public static final ConfigInteger underFull_weakness_amp = new ConfigInteger(
-            "虚弱",
+            "100%阶段 虚弱",
             2,
             0,
             4,
-            "虚弱效果的等级, 设置为 0 可禁用，1 表示虚弱 I"
+            "达到100%阶段的虚弱效果的等级, 设置为 0 可禁用，1 表示虚弱 I"
     );
 
     public static final ConfigInteger underFull_confusion_amp = new ConfigInteger(
-            "反胃",
+            "100%阶段 反胃",
             0,
             0,
             4,
-            "反胃效果的等级, 设置为 0 可禁用"
+            "达到100%阶段的反胃效果的等级, 设置为 0 可禁用"
     );
 
     public static final ConfigInteger underFull_blindness_amp = new ConfigInteger(
-            "失明",
+            "100%阶段 失明",
             0,
             0,
             4,
-            "失明效果的等级, 设置为 0 可禁用"
+            "达到100%阶段的失明效果的等级, 设置为 0 可禁用"
     );
 
     public static final ConfigInteger underFull_hunger_amp = new ConfigInteger(
-            "饥饿",
+            "100%阶段 饥饿",
             0,
             0,
             4,
-            "饥饿效果的等级, 设置为 0 可禁用"
+            "达到100%阶段的饥饿效果的等级, 设置为 0 可禁用"
     );
 
     public static final ConfigInteger underFull_poison_amp = new ConfigInteger(
-            "中毒",
+            "100%阶段 中毒",
             0,
             0,
             4,
-            "中毒效果的等级, 设置为 0 可禁用"
+            "达到100%阶段的中毒效果的等级, 设置为 0 可禁用"
     );
 
     public static final ConfigInteger underFull_wither_amp = new ConfigInteger(
-            "凋零",
+            "100%阶段 凋零",
             0,
             0,
             4,
-            "凋零效果的等级, 设置为 0 可禁用"
+            "达到100%阶段的凋零效果的等级, 设置为 0 可禁用"
     );
 
     private static final PLConfig INSTANCE;
@@ -219,7 +219,8 @@ public class PLConfig extends SimpleConfigs {
                 under50_confusion_amp, under50_blindness_amp, under50_hunger_amp,
                 under50_poison_amp, under50_wither_amp);
 
-        UnderFullSettings = List.of(underFull_digSlowdown_amp, underFull_moveSlowdown_amp, underFull_weakness_amp,
+        UnderFullSettings = List.of(
+                underFull_digSlowdown_amp, underFull_moveSlowdown_amp, underFull_weakness_amp,
                 underFull_confusion_amp, underFull_blindness_amp, underFull_hunger_amp,
                 underFull_poison_amp, underFull_wither_amp);
 

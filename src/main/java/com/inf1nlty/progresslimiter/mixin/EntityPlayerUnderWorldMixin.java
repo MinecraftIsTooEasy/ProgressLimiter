@@ -71,9 +71,17 @@ public abstract class EntityPlayerUnderWorldMixin {
             return;
         }
 
-        if (this.progLimiter_timerTicks < thresholdTicks)
+        if (thresholdTicks <= 0)
         {
-            this.progLimiter_timerTicks++;
+            this.progLimiter_timerTicks = 0;
+            this.progLimiter_warn50 = false;
+            this.progLimiter_warn80 = false;
+            removeAllEffects(selfLiving);
+            return;
+        }
+        else
+        {
+            this.progLimiter_timerTicks = Math.min(this.progLimiter_timerTicks + 1, thresholdTicks);
         }
 
         if (this.progLimiter_timerTicks >= thresholdTicks)
