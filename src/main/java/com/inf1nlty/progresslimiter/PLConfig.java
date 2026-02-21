@@ -237,7 +237,7 @@ public class PLConfig extends SimpleConfigs {
         t.add(new ConfigTab("地下世界 - 100%阶段", UnderFullSettings));
         tabs = Collections.unmodifiableList(t);
 
-        INSTANCE = new PLConfig("防内卷", Total);
+        INSTANCE = new PLConfig("Progress Limiter", Total);
     }
 
     public static int getThresholdTicks() {
