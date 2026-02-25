@@ -1,5 +1,5 @@
 plugins {
-    id 'fml-loom' version '0.1.local'
+    id 'fml-loom' version '0.1'
     id 'maven-publish'
 }
 
@@ -7,46 +7,46 @@ version = project.mod_version
 group = project.maven_group
 
 base {
-    archivesName = "[服务端模组防内卷]" +  project.archives_base_name
+    archivesName = "[服务端模组防内卷]" + project.archives_base_name
 }
 
 repositories {
-    mavenLocal()
     maven {
-        name = "Spongepowered"
-        url = "https://repo.spongepowered.org/repository/maven-public/"
+        name = "ModdedMITE"
+        url = uri("https://maven.limingzxc.top/repository/maven-public/")
     }
 }
 
+configurations {
+    fml
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    fml "com.github.MinecraftIsTooEasy:FishModLoader:3.4.2"
+    implementation "com.github.MinecraftIsTooEasy:FishModLoader:3.4.2"
+
+    implementation "com.github.MinecraftIsTooEasy:ManyLib:2.3.0"
+    implementation "com.github.MinecraftIsTooEasy:ModMenu:10.1.1"
+}
+
+def fmlResolvedFile = configurations.fml.files.iterator().next()
+
 loom {
-//    accessWidenerPath = file("src/main/resources/modid.accessWidener")
+//    accessWidenerPath = file("src/main/resources/progresslimiter.accessWidener")
     mergedMinecraftJar()
-    setFML(new File("${lib_dir}/${fml_file_name}${fml_version}.jar"))
+
     mods {
         "ProgressLimiter" {
             sourceSet sourceSets.main
         }
     }
-
 }
 
-tasks.named('runClient', JavaExec).configure { exec ->
-    def user = project.hasProperty('username') ? project.username : 'Dev'
-    exec.setArgs(['--username', user, '--session', '0', '--width', '854', '--height', '480'])
-}
-
-dependencies {
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.fmlMCPMappings()
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-    implementation files(loom.getFML().toPath())
-
-    implementation files("${lib_dir}/ManyLib-2.2.2.jar")
-    implementation files("${lib_dir}/ModMenu-10.1.1.jar")
-    //manylib
-    implementation files("${lib_dir}/gson-2.10.1.jar")
-}
+loom.setFML(fmlResolvedFile)
+dependencies.add("mappings", loom.fmlMCPMappings())
 
 processResources {
     inputs.property "version", project.version
@@ -68,7 +68,11 @@ java {
 }
 
 jar {
+}
 
+tasks.named('runClient', JavaExec).configure { exec ->
+    def user = project.hasProperty('username') ? project.username : 'Dev'
+    exec.setArgs(['--username', user, '--session', '0', '--width', '854', '--height', '480'])
 }
 
 // configure the maven publication
