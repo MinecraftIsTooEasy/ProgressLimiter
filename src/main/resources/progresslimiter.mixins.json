@@ -12,5 +12,8 @@
   "mixins": [
     "EntityPlayerUnderWorldMixin",
     "EntityPlayerOverWorldMixin"
-  ]
+  ],
+  "overwrites": {
+    "requireAnnotations": true
+  }
 }
